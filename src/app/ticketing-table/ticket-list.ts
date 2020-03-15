@@ -1,0 +1,132 @@
+import {Ticket} from './ticket-table';
+
+export const TICKETLIST: Ticket[] = [
+  {
+    id: 1,
+    ticketNumber: 56678,
+    date: "13/02/2020",
+    priority: 1,
+    client: "UTC, Bangalore",
+    city: "Bangalore",
+  },
+  {
+    id: 2,
+    ticketNumber: 566883,
+    date: "01/02/2020",
+    priority: 2,
+    client: "SBI, Bangalore MG Road",
+    city: "Bangalore"
+  },
+  {
+    id: 3,
+    ticketNumber: 56954,
+    date: "25/01/2020",
+    priority: 4,
+    client: "Super Market, Bangalore",
+    city: "Bangalore"
+  },
+  {
+    id: 4,
+    ticketNumber: 869433,
+    date: "22/01/2020",
+    priority: 5,
+    client: "Manpower, Bangalore East",
+    city: "Bangalore"
+  },
+  {
+    id: 5,
+    ticketNumber: 568951,
+    date: "31/12/2019",
+    priority: 3,
+    client: "UTC, Bangalore",
+    city: "Bangalore"
+  },
+  {
+    id: 6,
+    ticketNumber: 56678589,
+    date: "03/02/2020",
+    priority: 2,
+    client: "Manpower, Bangalore",
+    city: "Bangalore"
+  },
+  {
+    id: 7,
+    ticketNumber: 5667865,
+    date: "05/01/2020",
+    priority: 1,
+    client: "SBI, Hubli",
+    city: "Hubli"
+  },
+  {
+    id: 8,
+    ticketNumber: 56678778,
+    date: "07/02/2020",
+    priority: 1,
+    client: "UTC, TN",
+    city: "TN"
+  },
+  {
+    id: 9,
+    ticketNumber: 568998,
+    date: "08/01/2020",
+    priority: 3,
+    client: "SBI, UP",
+    city: "UP"
+  },
+  {
+    id: 10,
+    ticketNumber: 33556678,
+    date: "10/02/2020",
+    priority: 3,
+    client: "Manpower, MP",
+    city: "MP"
+  },
+  {
+    id: 11,
+    ticketNumber: 566343478,
+    date: "11/01/2020",
+    priority: 3,
+    client: "SBI, WB",
+    city: "WB"
+  },
+  {
+    id: 12,
+    ticketNumber: 566786767,
+    date: "18/02/2020",
+    priority: 4,
+    client: "UTC, Hubli",
+    city: "Hubli"
+  },
+  {
+    id: 13,
+    ticketNumber: 56678999,
+    date: "09/01/2020",
+    priority: 4,
+    client: "UTC, Mysore",
+    city: "Mysore"
+  },
+  {
+    id: 14,
+    ticketNumber: 56678900,
+    date: "23/01/2020",
+    priority: 5,
+    client: "SBI, Pune",
+    city: "Pune"
+  },
+  {
+    id: 15,
+    ticketNumber: 343434,
+    date: "18/01/2020",
+    priority: 5,
+    client: "Manpower, Kerala",
+    city: "Kerala"
+  },
+  {
+    id: 16,
+    ticketNumber: 121212,
+    date: "09/02/2020",
+    priority: 5,
+    client: "SBI, Pune",
+    city: "Pune"
+  }
+];

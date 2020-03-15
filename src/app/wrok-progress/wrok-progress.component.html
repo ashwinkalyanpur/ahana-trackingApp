@@ -1,0 +1,93 @@
+<div class="card">
+    <div class="card-body">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <label class="alignLBL">
+                Customer OTP/Email Auth Code to be submited before start of work and end once work is completed</label>
+            <div class="startwork" *ngIf="hideTimmer">
+                <!-- <agm-map style="height:500px" [zoom]='19' [latitude]="lat" [longitude]="lng">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                  </agm-map> -->
+
+
+
+                  <div class="container">
+                    <div class="row my-5 d-flex flex-center">
+                      <div class="col-md-6">
+                        <agm-map #map [mapTypeId]="'terrain'" [latitude]="location.lat" [longitude]="location.lng" style="height: 300px">
+                          <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
+                        </agm-map>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="md-form">
+                          <input type="text" [(ngModel)]='location.address_level_1' class="form-control" id="searchField"
+                            mdbInput>
+                          <label for="searchField">Search location</label>
+                  
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12 d-flex flex-center">
+                            <button mdbBtn color="primary" mdbWavesLight (click)='updateOnMap()' type="submit">Search</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+
+                  
+                <label for="" class="lblWork">OTP/Email Code </label>
+                <input type="text" class="form-control inputWork" maxlength="8">
+                <button type="button" (click)="verified()" class="btn btn-primary">Primary</button>
+            </div>
+            <div class="endWork" *ngIf="showTimmer">
+                <div
+                    style="width: 100px; text-align:center; position: relative; left: 50%; transform: translateX(-50%);">
+                    <h1>{{ timer$ | async }}</h1>
+                </div>
+                <!-- <div style="text-align:center">
+                    <webcam [height]="500" [width]="500" [trigger]="triggerObservable"
+                        (imageCapture)="handleImage($event)" *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch"
+                        [switchCamera]="nextWebcamObservable" [videoOptions]="videoOptions" [imageQuality]="1"
+                        (cameraSwitched)="cameraWasSwitched($event)" (initError)="handleInitError($event)"></webcam>
+                    <br />
+                    <button class="actionBtn" (click)="triggerSnapshot();">Take A Snapshot</button>
+                    <br />
+                    DeviceId: <input id="deviceId" type="text" [(ngModel)]="deviceId" style="width: 500px">
+                    <button (click)="showNextWebcam(deviceId);">Activate</button>
+                </div> -->
+                <button type="button" (click)="start()" class="btn btn-primary">Start</button>
+                <button type="button" class="btn btn-success" (click)="stop()">Completed</button>
+            </div>
+            <div class="startwork" *ngIf="completed">
+                <label for="">Use diffrent OTP/Email Code once generated on submition od complet</label><br>
+                <label for="">Upload image if any replacement done</label><br>
+                <div class="col-sm-12">
+                    <div class="form-group col-sm-6">
+                        <input type="file" name="image" (change)="VRForm($event)" />
+                    </div>
+                    <div class="col-sm-6" *ngIf="fileUploadProgressVRForm">
+                        Upload progress: {{ fileUploadProgressVRForm }}
+                    </div>
+                    <div class="image-preview mb-3" *ngIf="previewUrlVRForm">
+                        <img [src]="previewUrlVRForm" height="300" />
+                    </div>
+
+                    <div class="mb-3" *ngIf="uploadedFilePathVRForm">
+                        {{uploadedFilePathVRForm}}
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control inputWork" maxlength="8">
+                    <button type="button" (click)="completedThank()" class="btn btn-primary">Verify</button>
+                </div>
+            </div>
+            <div class="endWork" *ngIf="completedthanks">
+                <h3>Thanks for completing the service with SBI Bangalore</h3>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+</div>

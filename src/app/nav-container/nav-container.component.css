@@ -1,0 +1,38 @@
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+    content: "";
+    background: no-repeat center center;
+    background-size: 100% 100%;
+}
+.navbar-light .navbar-toggler-icon {
+    /* background-image: url(data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000…p='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e); */
+    background-image: url("data:image/svg+xml,svg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg' path stroke='rgba(0, 0, 0, 0.5")
+
+}
+.fa{
+    font-size: 2.25rem;
+    float: left;
+    margin-right: 20px;
+    width: 25px;
+    color: #fff;
+}
+.toggled .fa{
+    font-size: 2rem;
+}
+.navbar-fixed-top{
+    top:75px;
+}
+.navbar-fixed-bottom, .navbar-fixed-top{
+    position: absolute;
+}
+.user-icon{
+    border: 2px solid #f9f9f9;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.sidebar-nav li.sidebar-brand a{
+    padding-left: 15px;
+}

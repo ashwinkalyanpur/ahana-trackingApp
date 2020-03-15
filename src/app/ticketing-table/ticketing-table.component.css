@@ -1,0 +1,19 @@
+.linkUpdate{
+    cursor: pointer;
+}
+.modal-body label{
+    padding-left: 0;
+    font-weight: normal;
+}
+.modal-body textarea{
+    width: 100%;
+    resize: none;
+}
+input[type=checkbox], input[type=radio]{
+    position: absolute;
+    clip: rect(0,0,0,0);
+    pointer-events: none;
+}
+.modal-body label{
+    padding-left: 12px;
+}

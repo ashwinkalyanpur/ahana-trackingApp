@@ -1,0 +1,129 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 1.25rem;
+    margin-top: 50px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    padding-top: 2rem;
+}
+.card-body h3{
+    position: absolute;
+    top: -35px;
+    background: #fff;
+    left: 35px;
+}
+.margin-btm{
+    margin-bottom: 25px;
+}
+.spacing{
+    margin-right: 15px;
+    float: right;
+}
+
+
+
+input[type=checkbox]:checked ~ label ~ .show-option { 
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox]:checked ~ label { 
+    display: inline-block;
+    opacity: 1;
+    background-color: green;
+    height: 16px;
+  }
+  .content, .show-option {
+    display: block;
+    clear: both;
+    opacity: 0;
+    height: 0;
+    display: none;
+  }
+  input[type=checkbox] ~ label {
+    display: block;
+    width: 40px;
+}
+
+  input[type=checkbox]:checked ~ label ~ .show-option{
+    display: inline-block;
+    height: auto;
+    opacity: 1;
+    float: right;
+    margin-right: 60px;
+    margin-top: -8px;
+  }
+
+  .inner {
+    display: block;
+    height: auto;
+    position: absolute;
+    width: 525px;
+    right: 10px;
+  }
+  
+  .inner input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 1px;
+    content: "";
+    height: 14px;
+    left: 1px;
+    position: absolute;
+    transition: .4s;
+    width: 14px;
+  }
+  
+  input:checked + .slider {
+    background-color: #66bb6a;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+    height: 16px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  .height-spacing{
+      height:25px;
+  }
+  .align-add-btn{
+    width: 90%;
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .fa{
+    margin-left: 15px;
+}

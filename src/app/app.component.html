@@ -1,0 +1,25 @@
+<div class="container-fluied">
+  <div class="col-sm-12">
+    <div class="row">
+      <div class="header">
+        <app-header></app-header>
+      </div>
+    </div>
+  </div>
+  <div id="wrapper" [ngClass]="ref.click === true? 'toggled' :''">
+    <div class="overlay" [ngStyle]="{disply:ref.click === true? 'block' :'none'}"></div>
+    <!-- <div class="align-menu"> -->
+    <app-nav-container></app-nav-container>
+    <!-- </div> -->
+    <!-- <div class="col-xs-12 col-sm-10 col-xs-offset-2"> -->
+    <div id="page-content-wrapper">
+      <button appSidebar #ref="appSidebar" type="button" class="hamburger is-closed" data-toggle="offcanvas">
+        <span class="hamb-top"></span>
+        <span class="hamb-middle"></span>
+        <span class="hamb-bottom"></span>
+      </button>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+<footer>2020 © Copyright Ahana Systems and Solutions (P) Ltd.</footer>

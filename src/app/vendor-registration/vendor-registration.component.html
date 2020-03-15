@@ -1,0 +1,241 @@
+<form>
+    <div class="card margin-btm">
+        <div class="card-body spacing-tab">
+            <h3>Vendor Registration App</h3>  
+            <ngb-tabset #t="ngbTabset">
+                <ngb-tab id="tab-id1" title="Company Details">
+                    <ng-template ngbTabContent>
+                        <div class="form-group col-sm-6">
+                            <label for="name">Company Name</label>
+                            <input type="text" class="form-control" required id="fname" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="lname">Company Register Number</label>
+                            <input type="text" class="form-control" required id="lname" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Mnumber">Company Telephone Number</label>
+                            <input type="number" class="form-control" required id="Mnumber" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Mnumber">Company Email ID</label>
+                            <input type="email" class="form-control" required id="Mnumber" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="city">Contact Person Name</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="city">Designation of Contact Person</label>
+                            <input type="text" class="form-control" id="city" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Add1">Office Address 1</label>
+                            <input type="text" class="form-control" required id="Add1" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Add2">Office Address 2</label>
+                            <input type="text" class="form-control" id="Add2" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Add2">Country</label>
+                            <input type="text" class="form-control" id="Add2" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Add2">State</label>
+                            <input type="text" class="form-control" id="Add2" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="Add2">City</label>
+                            <input type="text" class="form-control" id="Add2" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="pCode">Pin Code</label>
+                            <input type="number" class="form-control" id="pCode" required>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab id="tab-id2" title="Company Document">
+                    <ng-template ngbTabContent>
+                        <div class="form-group col-sm-6">
+                            <label for="country">Pan</label>
+                            <input type="text" class="form-control" id="country" required>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="state">GST</label>
+                            <input type="text" class="form-control" id="state" required>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="" class="col-sm-12">Vendor Register Form</label>
+                            <div class="form-group col-sm-6">
+                                <input type="file" name="image" (change)="VRForm($event)" />
+                            </div>
+                            <div class="col-sm-6" *ngIf="fileUploadProgressVRForm">
+                                Upload progress: {{ fileUploadProgressVRForm }}
+                            </div>
+                            <div class="image-preview mb-3" *ngIf="previewUrlVRForm">
+                                <img [src]="previewUrlVRForm" height="300" />
+                            </div>
+
+                            <div class="mb-3" *ngIf="uploadedFilePathVRForm">
+                                {{uploadedFilePathVRForm}}
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="col-sm-12" for="">NDA</label>
+                            <div class="form-group col-sm-6">
+                                <input type="file" name="image" (change)="NDA($event)" />
+                            </div>
+                            <div class="col-sm-6" *ngIf="fileUploadProgressNDA">
+                                Upload progress: {{ fileUploadProgressNDA }}
+                            </div>
+                            <div class="image-preview mb-3" *ngIf="previewUrlNDA">
+                                <img [src]="previewUrlNDA" height="300" />
+                            </div>
+
+                            <div class="mb-3" *ngIf="uploadedFilePathNDA">
+                                {{uploadedFilePathNDA}}
+                            </div>
+
+                            
+                            <!-- <div class="form-group spacing-top">
+                                <button class="btn btn-primary" (click)="onSubmitNDA()">Submit</button>
+                            </div> -->
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <label class="col-sm-12" for="">Agreement</label>
+                                    <div class="form-group col-sm-6">
+                                        <input type="file" name="image" (change)="Agreement($event)" />
+                                    </div>
+                                    <div class="col-sm-6" *ngIf="fileUploadProgressAgre">
+                                        Upload progress: {{ fileUploadProgressAgre }}
+                                    </div>
+                                    <div class="image-preview mb-3" *ngIf="previewUrlAgre">
+                                        <img [src]="previewUrlAgre" height="300" />
+                                    </div>
+
+                                    <div class="mb-3" *ngIf="uploadedFilePathAgre">
+                                        {{uploadedFilePathAgre}}
+                                    </div>
+
+                                    <!-- <div class="form-group spacing-top">
+                                        <button class="btn btn-primary" (click)="onSubmitAgre()">Submit</button>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <label for="LMark" class="col-sm-12">Description</label>
+                            <textarea name="" id="" class="txtarea"></textarea>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab id="tab-id3" title="Bank Info">
+                    <ng-template ngbTabContent>
+                        <div class="form-group col-sm-6">
+                            <label for="LMark">Benificiary Name</label>
+                            <input type="text" class="form-control" id="LMark" required>
+                        </div>
+                        <div class="form-group col-sm-12">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="LMark">Bank Account Number</label>
+                                    <input type="text" class="form-control" id="LMark" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="LMark">Bank Name</label>
+                                    <input type="text" class="form-control" id="LMark" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="LMark">IFSC Code</label>
+                                    <input type="text" class="form-control" id="LMark" required>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="LMark">MICR Code</label>
+                                    <input type="text" class="form-control" id="LMark" required>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+                <ngb-tab id="tab-id4" title="Cities Serviced">
+                    <ng-template ngbTabContent>
+                        <h3>Add sub vendor service provided city details </h3>
+                        <div class="form-group col-sm-4">
+                            <label for="CName">Company Name</label>
+                            <!-- <input type="text" class="form-control" id="CName" required> -->
+                            <label for="" class="vendor-info">Sample Vendor</label>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="CPerson">Contact Person</label>
+                            <!-- <input type="text" class="form-control" id="CPerson" required> -->
+                            <label for="" class="vendor-info">Sample Vendor contact person</label>
+                        </div>
+                        <div class="form-group col-sm-4">
+                            <label for="PNumber">Phone Number</label>
+                            <!-- <input type="text" class="form-control" id="PNumber" required> -->
+                            <label for="" class="vendor-info">Sample Vendor contact number</label>
+                        </div>
+                        <div class="col-sm-12">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>City</th>
+                                        <th>Contact Name</th>
+                                        <th>Contact Number</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let registration of registrations; let i = index">
+                                        <td scope="row">{{ i + 1 }}</td>
+                                        <td>{{ registration.city }}</td>
+                                        <td>{{ registration.name }}</td>
+                                        <td>{{ registration.pnumber }}</td>
+                                        <td>
+                                            <button type="button" class="btn btn-info right-spaing" (click)="onEdit(i)">Edit</button>
+                                            <button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-primary" (click)="onNew()">New</button>
+                            </div>
+
+                            <div class="regentry" *ngIf="showNew">
+                                <form (ngSubmit)="onSave()">
+                                    <div class="form-group col-sm-4">
+                                        <label for="city-input" class="col-2 col-form-label">City</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" [(ngModel)]="regModel.city" name="city">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="name-input" class="col-2 col-form-label">Name</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" [(ngModel)]="regModel.name" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="example-pnumber-input" class="col-2 col-form-label">Phone number</label>
+                                        <div class="col-10">
+                                            <input class="form-control" type="text" [(ngModel)]="regModel.pnumber" name="pnumber">
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success right-spaing">{{submitType}}</button>
+                                    <button type="submit" class="btn btn-primary" (click)="onCancel()">Cancel</button>
+                                </form>
+                            </div>
+                        </div>
+                    </ng-template>
+                </ngb-tab>
+            </ngb-tabset>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary spacing">Submit</button>
+    <button type="submit" class="btn btn-light spacing">Cancel</button>
+</form>

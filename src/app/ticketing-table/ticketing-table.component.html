@@ -1,0 +1,149 @@
+    <div class="card">
+      <div class="card-body">
+        <form>
+          <div class="form-group form-inline">
+            Full text search: <input class="form-control ml-2" type="text" name="searchTerm"
+              [(ngModel)]="service.searchTerm" />
+            <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
+          </div>
+  
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col" sortable="date" (sort)="onSort($event)">Date</th>
+                <th scope="col" sortable="ticketNumber" (sort)="onSort($event)">Ticket Number</th>
+                <th scope="col" sortable="priority" (sort)="onSort($event)">Priority</th>
+                <th scope="col" sortable="client" (sort)="onSort($event)">Client</th>
+                <th scope="col" sortable="city" (sort)="onSort($event)">City</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let country of ticketlists$ | async" (click)="open(content, country)">
+                <th scope="row">{{ country.id }}</th>
+                <td>
+                  <ngb-highlight [result]="country.date" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                  <ngb-highlight  class="linkUpdate" [result]="country.ticketNumber" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                  <ngb-highlight [result]="country.priority" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                  <ngb-highlight  [result]="country.client" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+                <td>
+                  <ngb-highlight [result]="country.city" [term]="service.searchTerm"></ngb-highlight>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+  
+          <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
+            </ngb-pagination>
+  
+            <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+              <option [ngValue]="5">5 items per page</option>
+              <option [ngValue]="10">10 items per page</option>
+              <!-- <option [ngValue]="15">15 items per page</option> -->
+            </select>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  <ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{ modalContent.client }}</h4><br />
+      <label for="">Ref Ticket Number {{ modalContent.ticketNumber }}</label>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <label for="LMark" class="col-sm-12">Description</label>
+        <textarea name="" id="" class="txtarea"></textarea>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Vendor Id</th>
+              <th>Vendor Name</th>
+              <th>Vendor Cost</th>
+              <th>Select and Assign</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#####</td>
+              <td>Sample 1</td>
+              <td><i class="fa fa-inr" aria-hidden="true"></i> 350</td>
+              <td>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="one"  > UnAssgin
+                  </label>
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="one" > Assgin
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#####</td>
+              <td>Sample 2</td>
+              <td><i class="fa fa-inr" aria-hidden="true"></i> 150</td>
+              <td>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="two"  > UnAssgin
+                  </label>
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="two" > Assgin
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#####</td>
+              <td>Sample 3</td>
+              <td><i class="fa fa-inr" aria-hidden="true"></i> 500</td>
+              <td>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="three" > UnAssgin
+                  </label>
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="three" > Assgin
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#####</td>
+              <td>Sample 4</td>
+              <td><i class="fa fa-inr" aria-hidden="true"></i> 450</td>
+              <td>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="four" > UnAssgin
+                  </label>
+                  <label ngbButtonLabel class="btn-primary">
+                    <input ngbButton type="radio" name="four" > Assgin
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cancel</button>
+      <button type="button" class="btn btn-primary" (click)="c('Save click')">Save</button>
+    </div>
+  </ng-template>
+
+
+
+  

@@ -1,0 +1,80 @@
+<form>
+    <div class="card">
+        <div class="card-body">
+            <h3>Client Registration App</h3>
+            <div class="col-sm-12 height-spacing">
+                <div class="inner">
+                    <input type="checkbox" id="toggle">
+                    <label for="toggle" class="slider round"></label>
+                    <div class="show-option">
+                        <div class="form-group">
+                            <select class="form-control" id="client" (change)="selectInput($event)" [(ngModel)]="form.childClient" required name="client">
+                                <option *ngFor="let clientList of clients"  [value]="clientList">{{clientList}}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <span for="">
+                        Add Loaction for existing Customer
+                    </span>
+                </div>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="name">Company Name </label> 
+                <input *ngIf="hideCompanyName" type="text" class="form-control" required id="fname" required>
+                <!-- <i class="fa fa-plus" aria-hidden="true"></i> -->
+                <label class="displayCompany">{{form.childClient}}</label>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="lname">Company Phone Number</label>
+                <input type="text" class="form-control" required id="lname" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="lname">Company Email Id</label>
+                <input type="text" class="form-control" required id="lname" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="lname">Contact Person</label>
+                <input type="text" class="form-control" required id="lname" required>
+            </div>
+
+            <div class="form-group col-sm-6">
+                <label for="Mnumber">Mobile Number</label>
+                <input type="number" class="form-control" required id="Mnumber" required>
+            </div>
+            <!-- <div class="form-group col-sm-6">
+                <label for="Mnumber">Landline Number</label>
+                <input type="number" class="form-control" required id="Mnumber" required>
+            </div> -->
+            <div class="form-group col-sm-6">
+                <label for="EmailId">Email Id</label>
+                <input type="email" class="form-control" required id="EmailId" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="Add1">Address 1</label>
+                <input type="text" class="form-control" required id="Add1" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="Add2">Address 2</label>
+                <input type="text" class="form-control" id="Add2" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="country">Country</label>
+                <input type="text" class="form-control" id="country" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="state">State</label>
+                <input type="text" class="form-control" id="state" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="city">City</label>
+                <input type="text" class="form-control" id="city" required>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="LMark">Pin Code</label>
+                <input type="text" class="form-control" id="LMark" required>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary spacing">Submit</button>
+    <button type="submit" class="btn btn-light spacing">Cancel</button> 
+</form>

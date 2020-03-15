@@ -1,0 +1,22 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+  <!-- <button class="navbar-toggler ml-auto custom-toggler"type="button" data-toggle="collapse"
+(click)="isCollapsed= !isCollapsed">
+ <i class="fa fa-bars"></i>
+ </button> -->
+ <!-- <div class="collapse navbar-collapse" [ngbCollapse]="!isCollapsed" id="navbarSupportedContent"> -->
+        <ul class="nav sidebar-nav" routerLinkActive="active">
+          <li class="sidebar-brand">
+              <a href="#">
+                <img src="../../assets/images/user/images (1).jpg" class="user-icon" width="35px">
+                Test User
+              </a>
+          </li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/VendorRegistrationComponent'"><i class="fa fa-address-card"></i>Vendor Registration </a></li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/AddCustomerComponent'"><i class="fa fa-handshake-o" aria-hidden="true"></i>Client Registration</a></li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/TrackTableComponent'"><i class="fa fa-file-text-o" aria-hidden="true"></i>Client Details</a></li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/TicketingTableComponent'"><i class="fa fa-ticket" aria-hidden="true"></i>Ticketing</a></li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/AdminApprovalComponent'"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Approval</a></li>
+            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/WrokProgressComponent'">Work in progress</a></li>
+        </ul>
+    <!-- </div> -->
+</nav>

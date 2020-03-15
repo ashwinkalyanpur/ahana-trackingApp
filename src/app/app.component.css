@@ -1,0 +1,35 @@
+.header{
+    -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+    box-shadow:         3px 3px 5px 6px #ccc;
+    margin: 0 auto;
+    display: inline-block;
+    padding: 7px;
+    margin-bottom: 15px;
+    width: 100%;
+    max-height: 75px;
+}
+
+.align-action{
+  display: flex;
+  align-items: center;
+  height: 55px;
+  float: right;
+}
+.fa-sign-in{
+font-size: 2em;
+}
+.align-menu{
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  top: 75px;
+  display: block;
+  background: #313d94;
+  right: 83.33333333%;
+  -moz-box-shadow: 3px 0px 3px 0px rgba(50, 50, 50, 0.1);
+  box-shadow: 6px 0px 3px 0px rgba(50, 50, 50, 0.1);
+}
+
+
+

@@ -1,0 +1,22 @@
+<ngb-tabset [destroyOnHide]="false">
+    <ngb-tab title="Vendor Registration">
+      <ng-template ngbTabContent>
+        <app-vendor-registration></app-vendor-registration>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Client Registration">
+      <ng-template ngbTabContent>
+        <app-add-customer></app-add-customer>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Client Details">
+      <ng-template ngbTabContent>
+        <app-track-table></app-track-table>
+      </ng-template>
+    </ngb-tab>
+    <ngb-tab title="Ticketing">
+      <ng-template ngbTabContent>
+        <app-ticketing-table></app-ticketing-table>
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>

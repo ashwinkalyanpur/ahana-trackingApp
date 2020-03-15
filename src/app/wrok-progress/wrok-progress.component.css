@@ -1,0 +1,22 @@
+.lblWork, .inputWork{
+    display: inline-block;
+    max-width: 300px;
+    margin-right: 15px;
+}
+.endWork{
+    text-align: right;
+}
+.endWork .btn{
+    margin-right: 15px;
+}
+h3, .alignLBL{
+    text-align: center;
+    width: 100%;
+}
+.startwork{
+    text-align: left;
+    margin-top: 25px;
+}
+agm-map {
+    height: 300px;
+  }
