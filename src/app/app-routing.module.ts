@@ -7,6 +7,8 @@ import { TicketingTableComponent } from './ticketing-table/ticketing-table.compo
 import { AdminApprovalComponent } from './admin-approval/admin-approval.component';
 import { CreateLoginComponent } from './create-login/create-login.component';
 import { WrokProgressComponent } from './wrok-progress/wrok-progress.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 
@@ -20,6 +22,9 @@ const routes: Routes = [
   { path: "AdminApprovalComponent", component: AdminApprovalComponent },
   { path: "CreateLoginComponent", component: CreateLoginComponent },
   { path: "WrokProgressComponent", component: WrokProgressComponent },
+  { path: "LoginComponent", component: LoginComponent },
+  { path: "ForgotPasswordComponent", component: ForgotPasswordComponent },
+
 ];
 
 @NgModule({

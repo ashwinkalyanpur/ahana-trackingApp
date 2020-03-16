@@ -31,6 +31,8 @@ import { WrokProgressComponent } from './wrok-progress/wrok-progress.component';
 import { WebcamModule } from 'ngx-webcam';
 import { SidebarDirective } from './sidebar-directive';
 import { AgmCoreModule } from '@agm/core';
+import { CreateAccountComponent } from './create-account/create-account.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { AgmCoreModule } from '@agm/core';
     LoginComponent,
     RegistrationComponent,
     WrokProgressComponent,
-    SidebarDirective
+    SidebarDirective,
+    CreateAccountComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

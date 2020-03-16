@@ -188,7 +188,7 @@
   bottom: 0;
   overflow-y: auto;
   overflow-x: hidden;
-  background: #313d94;
+  background: #0f59a3;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -502,7 +502,36 @@ footer{
 .navbar{
   margin-bottom: 0;
 }
-
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: 1.25rem;
+  margin-top: 50px;
+}
+.card-body {
+  flex: 1 1 auto;
+  padding: 1.25rem;
+  padding-top: 2rem;
+}
+.card-body h3{
+  position: absolute;
+  top: -35px;
+  background: #fff;
+  left: 35px;
+}
+.spacing {
+  margin-right: 15px;
+  float: right;
+}
+.margin-btm{
+  margin-bottom: 25px;
+}
 @media only screen and (max-width: 600px) {
   #page-content-wrapper {
     padding-top: 0;
