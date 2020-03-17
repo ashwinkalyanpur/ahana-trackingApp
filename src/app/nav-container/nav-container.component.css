@@ -36,3 +36,21 @@
 .sidebar-nav li.sidebar-brand a{
     padding-left: 15px;
 }
+.collapse ul li{
+    padding-left: 1px;
+}
+.collapse ul li.active{
+    background-color: transparent !important;
+    border-left: 1px solid #fff;
+    padding-left: 0;
+}
+.collapse ul{
+    padding-left: 20px;
+}
+.collapse.show ul li a .fa{
+    font-size: 1.75rem;
+    margin-right: 15px;
+}
+.nav>li>a{
+    cursor: pointer;
+}

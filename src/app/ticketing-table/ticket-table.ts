@@ -5,4 +5,5 @@ export interface Ticket {
     date: string;
     client: string;
     city: string;
+    status: string;
   }

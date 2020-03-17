@@ -92,10 +92,12 @@
 .modal-backdrop.fade.show {
   filter: alpha(opacity=50);
   opacity: .5;
+  z-index: 999999 !important;
 }
 .modal.fade.show {
   filter: alpha(opacity=100);
   opacity: 1;
+  z-index: 999999 !important;
 }
 .modal-dialog{
   margin-top: 100px !important;
@@ -490,7 +492,7 @@ display: block;
 }
 /* End Toggle Menu */
 footer{
-  position: absolute;
+  position: fixed;
     bottom: 0;
     text-align: center;
     width: 100%;
@@ -518,12 +520,17 @@ footer{
   flex: 1 1 auto;
   padding: 1.25rem;
   padding-top: 2rem;
+  padding-bottom: 2.25rem;
 }
 .card-body h3{
   position: absolute;
-  top: -35px;
+  top: -60px;
   background: #fff;
-  left: 35px;
+  left: 45px;
+  padding: 7px 15px;
+  border: 1px solid #C8C8C8;
+  border-radius: 7px 7px 0 0;
+  border-bottom: 0;
 }
 .spacing {
   margin-right: 15px;
@@ -572,5 +579,21 @@ input[type=checkbox]:checked ~ label ~ .show-option{
   width: 20px;
   height: 20px;
   font-size: 9px;
+}
+.card-body h3 {
+  position: absolute;
+  top: -60px;
+  left: -5px;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+  border: 0;
+}
+.col-xs-8 .lbltextHeader.fa{
+  font-size: 2rem !important;
+}
+.logo{
+  padding:24% 0;
 }
 }

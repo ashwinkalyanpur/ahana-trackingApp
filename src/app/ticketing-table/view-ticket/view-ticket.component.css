@@ -1,0 +1,17 @@
+.btn, .btn:focus,.btn:hover{
+    width: 80px;
+    outline: none;
+    border: none;
+}
+input[type=checkbox], input[type=radio]{
+    opacity: 0;
+}
+td button{
+    display: none;
+}
+td button.btn.btn-warning, td button.btn.btn-danger, td button.btn.btn-success{
+    display: block;
+}
+textarea {
+    resize: none;
+ }

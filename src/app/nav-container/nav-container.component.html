@@ -14,7 +14,38 @@
             <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/VendorRegistrationComponent'"><i class="fa fa-address-card"></i>Vendor Registration </a></li>
             <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/AddCustomerComponent'"><i class="fa fa-handshake-o" aria-hidden="true"></i>Client Registration</a></li>
             <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/TrackTableComponent'"><i class="fa fa-file-text-o" aria-hidden="true"></i>Client Details</a></li>
-            <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/TicketingTableComponent'"><i class="fa fa-ticket" aria-hidden="true"></i>Ticketing</a></li>
+
+            <li class="nav-item" [routerLinkActive]="['active']"> 
+              <a 
+                type="button" 
+                class="btn btn-outline-primary" 
+                (click)="isCollapsed = !isCollapsed"
+                [attr.aria-expanded]="!isCollapsed" 
+                [routerLinkActive]="['active']"
+                aria-controls="collapseExample"
+                class="nav-link">
+                <i class="fa fa-ticket" aria-hidden="true"></i>
+                Ticketing
+              </a>
+              <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+                <ul>
+                  <li class="nav-item" [routerLinkActive]="['active']">
+                    <a [routerLinkActive]="['active']"
+                    [routerLink]="'/AssignTicketComponent'">
+                    <i class="fa fa-user-plus"></i>Assign Ticket
+                    </a>
+                  </li>
+                  <li class="nav-item" [routerLinkActive]="['active']">
+                    <a 
+                    [routerLinkActive]="['active']"
+                    [routerLink]="'/ViewTicketComponent'">
+                    <i class="fa fa-user-times"></i>View Ticket
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
             <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/AdminApprovalComponent'"><i class="fa fa-cogs" aria-hidden="true"></i>Admin Approval</a></li>
             <li class="nav-item" [routerLinkActive]="['active']"> <a class="nav-link" [routerLink]="'/WrokProgressComponent'">Work in progress</a></li>
         </ul>

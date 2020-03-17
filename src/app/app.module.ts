@@ -33,6 +33,8 @@ import { SidebarDirective } from './sidebar-directive';
 import { AgmCoreModule } from '@agm/core';
 import { CreateAccountComponent } from './create-account/create-account.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { AssignTicketComponent } from './ticketing-table/assign-ticket/assign-ticket.component';
+import { ViewTicketComponent } from './ticketing-table/view-ticket/view-ticket.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,9 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     WrokProgressComponent,
     SidebarDirective,
     CreateAccountComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    AssignTicketComponent,
+    ViewTicketComponent
   ],
   imports: [
     BrowserModule,

@@ -9,49 +9,49 @@
         </div>
         <span class="ml-3" *ngIf="service.loading$ | async">Loading...</span>
       </div>
-
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col" sortable="date" (sort)="onSort($event)">Company Name</th>
-            <th scope="col" sortable="ticketNumber" (sort)="onSort($event)">Contact Person</th>
-            <th scope="col" sortable="priority" (sort)="onSort($event)">Phone</th>
-            <th scope="col" sortable="client" (sort)="onSort($event)">Email</th>
-            <th scope="col" sortable="city" (sort)="onSort($event)">City</th>
-            <th scope="col" sortable="city" (sort)="onSort($event)">Approval</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let country of ticketlists$ | async">
-            <th scope="row">{{ country.id }}</th>
-            <td>
-              <ngb-highlight [result]="country.CName" [term]="service.searchTerm"></ngb-highlight>
-            </td>
-            <td>
-              <ngb-highlight class="linkUpdate" [result]="country.CPerson" [term]="service.searchTerm">
-              </ngb-highlight>
-            </td>
-            <td>
-              <ngb-highlight [result]="country.CNumber" [term]="service.searchTerm"></ngb-highlight>
-            </td>
-            <td>
-              <ngb-highlight [result]="country.Email" [term]="service.searchTerm"></ngb-highlight>
-            </td>
-            <td>
-              <ngb-highlight [result]="country.CService" [term]="service.searchTerm"></ngb-highlight>
-            </td>
-            <td>
-              <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
-                <button class="btn btn-primary"  (click)="openLg(approvalStatus, country)">
-                  View
-                </button>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col" sortable="date" (sort)="onSort($event)">Company Name</th>
+              <th scope="col" sortable="ticketNumber" (sort)="onSort($event)">Contact Person</th>
+              <th scope="col" sortable="priority" (sort)="onSort($event)">Phone</th>
+              <th scope="col" sortable="client" (sort)="onSort($event)">Email</th>
+              <th scope="col" sortable="city" (sort)="onSort($event)">City</th>
+              <th scope="col" sortable="city" (sort)="onSort($event)">Approval</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let country of ticketlists$ | async">
+              <th scope="row">{{ country.id }}</th>
+              <td>
+                <ngb-highlight [result]="country.CName" [term]="service.searchTerm"></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight class="linkUpdate" [result]="country.CPerson" [term]="service.searchTerm">
+                </ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="country.CNumber" [term]="service.searchTerm"></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="country.Email" [term]="service.searchTerm"></ngb-highlight>
+              </td>
+              <td>
+                <ngb-highlight [result]="country.CService" [term]="service.searchTerm"></ngb-highlight>
+              </td>
+              <td>
+                <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+                  <button class="btn btn-primary"  (click)="openLg(approvalStatus, country)">
+                    View
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <div class="d-flex justify-content-between p-2">
         <ngb-pagination [collectionSize]="total$ | async" [(page)]="service.page" [pageSize]="service.pageSize">
         </ngb-pagination>
@@ -77,37 +77,39 @@
   <form [formGroup]="formGroup" (validSubmit)="onSubmit()">
     <div class="modal-body">
       <div class="col-sm-12">
-        <table class="popup">
-          <tr>
-            <td><label>{{ modalContent.CName }}</label></td>
-            <td><label>{{ modalContent.CRegNumber }}</label></td>
-            <td><label>{{ modalContent.CPerson }}</label></td>
-            <td><label>{{ modalContent.PNumber }}</label></td>
-          </tr>
-          <tr>
-            <td><label>{{ modalContent.CAddress }}</label></td>
-            <td><label>{{ modalContent.CNumber }}</label></td>
-            <td><label>{{ modalContent.Email }}</label></td>
-            <td><label>{{ modalContent.CPan }}</label></td>
-          </tr>
-          <tr>
-            <td><label>{{ modalContent.CGST }}</label></td>
-            <td><button class="btn btn-info">Vendor Form</button></td>
-            <td><button class="btn btn-info">Download NDA</button></td>
-            <td><button class="btn btn-info">Download Agreement</button></td>
-          </tr>
-          <tr>
-            <td><label>{{ modalContent.Description }}</label></td>
-            <td><label>{{ modalContent.BCName }}</label></td>
-            <td><label>{{ modalContent.BANumber }}</label></td>
-            <td><label>{{ modalContent.BName }}</label></td>
-          </tr>
-          <tr>
-            <td><label>{{ modalContent.IFSC }}</label></td>
-            <td><label>{{ modalContent.MICR }}</label></td>
-            <td><label>{{ modalContent.CService }}</label></td>
-          </tr>
-        </table>
+        <div class="table-responsive">
+          <table class="popup">
+            <tr>
+              <td><label>{{ modalContent.CName }}</label></td>
+              <td><label>{{ modalContent.CRegNumber }}</label></td>
+              <td><label>{{ modalContent.CPerson }}</label></td>
+              <td><label>{{ modalContent.PNumber }}</label></td>
+            </tr>
+            <tr>
+              <td><label>{{ modalContent.CAddress }}</label></td>
+              <td><label>{{ modalContent.CNumber }}</label></td>
+              <td><label>{{ modalContent.Email }}</label></td>
+              <td><label>{{ modalContent.CPan }}</label></td>
+            </tr>
+            <tr>
+              <td><label>{{ modalContent.CGST }}</label></td>
+              <td><button class="btn btn-info">Vendor Form</button></td>
+              <td><button class="btn btn-info">Download NDA</button></td>
+              <td><button class="btn btn-info">Download Agreement</button></td>
+            </tr>
+            <tr>
+              <td><label>{{ modalContent.Description }}</label></td>
+              <td><label>{{ modalContent.BCName }}</label></td>
+              <td><label>{{ modalContent.BANumber }}</label></td>
+              <td><label>{{ modalContent.BName }}</label></td>
+            </tr>
+            <tr>
+              <td><label>{{ modalContent.IFSC }}</label></td>
+              <td><label>{{ modalContent.MICR }}</label></td>
+              <td><label>{{ modalContent.CService }}</label></td>
+            </tr>
+          </table>
+        </div>
       </div>
       <!-- <div class="form-group">
         <label for="discription">Description</label>
